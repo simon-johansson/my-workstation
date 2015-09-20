@@ -47,8 +47,16 @@ button:active {
 }
 */
 
-h1 {
+h1, h2 {
   text-align: center;
+}
+
+h2.green {
+  color: #00FF00;
+}
+
+h2.red {
+  color: red;
 }
 
 .pane {
@@ -56,6 +64,7 @@ h1 {
   height: 140px;
   margin: 80px auto;
   position: relative;
+  cursor: pointer;
 }
 
 .bell {
@@ -155,7 +164,7 @@ h1 {
     right: -15px;
 }
 
-.bell:hover .left-eye, .bell:hover .right-eye {
+.bell.active .left-eye, .bell.active .right-eye {
     width: 18px;
     height: 15px;
     top: -5px;
@@ -163,15 +172,15 @@ h1 {
     background: #c5c5c5;
 }
 
-.bell:hover .left-eye {
+.bell.active .left-eye {
     left: -18px;
 }
 
-.bell:hover .right-eye {
+.bell.active .right-eye {
     right: -18px;
 }
 
-.bell:hover .left-eye:before, .bell:hover .right-eye:before {
+.bell.active .left-eye:before, .bell.active .right-eye:before {
     content: "";
     position: absolute;
     width: 5px;
@@ -184,7 +193,7 @@ h1 {
     box-shadow: 23px 0 0 0 #909090;
 }
 
-.bell:hover .left-eye:after, .bell:hover .right-eye:after {
+.bell.active .left-eye:after, .bell.active .right-eye:after {
     content: "";
     position: absolute;
     background: #c5c5c5;
@@ -204,12 +213,42 @@ h1 {
     75% {-moz-transform: rotate(-5deg);}
 }
 
-.bell:hover {
+.bell.active {
     -webkit-animation: ringing 0.5s infinite;
     -moz-animation: ringing 0.5s infinite;
 }
 
-.bell:hover .face {
+.bell.active .face {
     height: 30%;
     top: 52%
+}
+
+.mouth {
+  height: 25px;
+  width: 50px;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
+  background: #909090;
+  display: block;
+  top: 8px;
+  position: absolute;
+  left: -6px;
+}
+
+.mouth .cover {
+  height: 25px;
+  width: 40px;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
+  background: #c5c5c5;
+  display: block;
+  top: 8px;
+  position: absolute;
+  left: 5px;
+}
+
+.hidden {
+  display: none;
 }
